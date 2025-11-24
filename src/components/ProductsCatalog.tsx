@@ -6,24 +6,28 @@ import { Zap, Battery, Wifi, Radio, Activity, MonitorPlay } from "lucide-react";
 const ProductsCatalog = () => {
   const inverters = [
     {
+      id: "sdt-g2-4-15",
       name: "SDT G2 Series (4-15 kW)",
       specs: ["Three phase", "2 MPPTs", "98.3% efficiency"],
       description: "Best option for residential & commercial segments with enhanced safety features including AFCI capability. Enhanced oversizing & overloading capabilities with plug-in AC connector for easy operation.",
       icon: Zap,
     },
     {
+      id: "sdt-g2-17-25",
       name: "SDT G2 Series (17-25 kW)",
       specs: ["Three phase", "2 MPPTs", "98.4% efficiency"],
       description: "Designed for three-phase residential and small commercial projects. 45% smaller than first generation, lightweight and easy to install with advanced ventilation system.",
       icon: Zap,
     },
     {
+      id: "ht-1100v",
       name: "HT 1100V Series (100-120 kW)",
       specs: ["Up to 12 MPPTs", "Three phase", "High power density"],
       description: "Compact and efficient inverters developed for large commercial / small utility PV systems. Compatible with high-power modules with enhanced profitability.",
       icon: Zap,
     },
     {
+      id: "ht-1500v",
       name: "HT 1500V Series (225-250 kW)",
       specs: ["Up to 12 MPPTs", "Three phase", "Utility-scale"],
       description: "Maximising ROI for utility-scale projects in all environments. Optimises energy yield and ensures high performance under toughest conditions.",
@@ -100,8 +104,9 @@ const ProductsCatalog = () => {
               {inverters.map((product, index) => (
                 <Card 
                   key={index}
-                  className="p-6 hover:shadow-strong transition-all duration-500 hover:-translate-y-2 group animate-fade-in-up"
+                  className="p-6 hover:shadow-strong transition-all duration-500 hover:-translate-y-2 group animate-fade-in-up cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => window.location.href = `/product/${product.id}`}
                 >
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:shadow-glow transition-smooth">
