@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import hedgeLogo from "@/assets/hedge-logo.png";
 
 const Footer = () => {
@@ -21,11 +22,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-background/80">
-              <li><a href="#home" className="hover:text-background transition-smooth">Home</a></li>
-              <li><a href="#about" className="hover:text-background transition-smooth">About Us</a></li>
-              <li><a href="#solutions" className="hover:text-background transition-smooth">Solutions</a></li>
-              <li><a href="#products" className="hover:text-background transition-smooth">Products</a></li>
-              <li><a href="#contact" className="hover:text-background transition-smooth">Contact</a></li>
+              <li><Link to="/" className="hover:text-background transition-smooth">Home</Link></li>
+              <li><Link to="/about" className="hover:text-background transition-smooth">About Us</Link></li>
+              <li><Link to="/solutions" className="hover:text-background transition-smooth">Solutions</Link></li>
+              <li><Link to="/products" className="hover:text-background transition-smooth">Products</Link></li>
+              <li><Link to="/services" className="hover:text-background transition-smooth">Services</Link></li>
+              <li><Link to="/contact" className="hover:text-background transition-smooth">Contact</Link></li>
             </ul>
           </div>
 
