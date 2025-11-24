@@ -7,8 +7,10 @@ import Products from "@/components/Products";
 import ProductsCatalog from "@/components/ProductsCatalog";
 import Services from "@/components/Services";
 import ServiceRequestForm from "@/components/ServiceRequestForm";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -22,8 +24,10 @@ const Index = () => {
       <ProductsCatalog />
       <Services />
       <ServiceRequestForm />
+      <Testimonials />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
