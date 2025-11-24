@@ -54,32 +54,33 @@ const Solutions = () => {
           {solutions.map((solution, index) => (
             <Card 
               key={index} 
-              className="overflow-hidden hover:shadow-strong transition-all duration-300 border-border group"
+              className="overflow-hidden hover:shadow-strong transition-all duration-500 border-border group animate-fade-in-up hover:-translate-y-2"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {solution.image && (
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={solution.image} 
                     alt={solution.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
               )}
               <div className={solution.image ? "p-6" : "p-8"}>
-                <div className="w-14 h-14 bg-gradient-energy rounded-lg flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-gradient-energy rounded-xl flex items-center justify-center mb-4 group-hover:shadow-glow transition-smooth">
                   <solution.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">{solution.title}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{solution.description}</p>
                 <ul className="space-y-2 mb-6">
                   {solution.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                    <li key={idx} className="flex items-center text-sm text-muted-foreground group-hover:translate-x-1 transition-smooth" style={{ transitionDelay: `${idx * 50}ms` }}>
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-smooth">
                   Learn More
                 </Button>
               </div>
