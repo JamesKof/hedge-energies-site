@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <Contact />
       <Footer />
       <BackToTop />
+      <WhatsAppChat />
     </div>
   );
 };
