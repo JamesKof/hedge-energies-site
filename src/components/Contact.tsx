@@ -59,13 +59,17 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {contactInfo.map((info, index) => (
-            <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 bg-card border-border">
-              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <info.icon className="w-7 h-7 text-primary-foreground" />
+            <Card 
+              key={index} 
+              className="p-6 text-center hover:shadow-strong transition-all duration-500 bg-card border-border hover:-translate-y-2 group animate-scale-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-smooth">
+                <info.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{info.title}</h3>
               {info.link ? (
-                <a href={info.link} className="text-primary hover:text-primary-light transition-smooth">
+                <a href={info.link} className="text-primary hover:text-primary-dark transition-smooth font-medium">
                   {info.details.map((detail, idx) => (
                     <div key={idx}>{detail}</div>
                   ))}
@@ -81,49 +85,55 @@ const Contact = () => {
           ))}
         </div>
 
-        <Card className="max-w-2xl mx-auto p-8 bg-card border-border shadow-medium">
+        <Card className="max-w-2xl mx-auto p-8 bg-card border-border shadow-strong animate-scale-in">
           <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Send Us a Message</h3>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <Input
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-background"
+                className="bg-background transition-all duration-300 focus:shadow-soft"
               />
             </div>
             <div className="grid md:grid-cols-2 gap-4">
-              <Input
-                type="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="bg-background"
-              />
-              <Input
-                type="tel"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="bg-background"
-              />
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="bg-background transition-all duration-300 focus:shadow-soft"
+                />
+              </div>
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="bg-background transition-all duration-300 focus:shadow-soft"
+                />
+              </div>
             </div>
-            <div>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Textarea
                 placeholder="Tell us about your energy needs..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-background resize-none"
+                className="bg-background resize-none transition-all duration-300 focus:shadow-soft"
               />
             </div>
-            <Button type="submit" variant="hero" className="w-full" size="lg">
-              Send Message
-            </Button>
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <Button type="submit" variant="hero" className="w-full shadow-medium hover:shadow-strong" size="lg">
+                Send Message
+              </Button>
+            </div>
           </form>
         </Card>
       </div>

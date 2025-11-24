@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import hedgeLogo from "@/assets/hedge-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,11 +9,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-solar rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold text-xl">H</span>
-              </div>
-              <span className="text-xl font-bold">Hedge Energy Solutions</span>
+            <div className="flex items-center mb-4">
+              <img src={hedgeLogo} alt="Hedge Energy Solutions" className="h-16 w-auto brightness-0 invert" />
             </div>
             <p className="text-background/80 text-sm leading-relaxed">
               Powering Ghana's sustainable future with innovative solar solutions. 

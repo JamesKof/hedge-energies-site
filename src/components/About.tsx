@@ -43,10 +43,11 @@ const About = () => {
           {values.map((value, index) => (
             <Card 
               key={index} 
-              className="p-6 hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-card border-border"
+              className="p-6 hover:shadow-strong transition-all duration-500 hover:-translate-y-2 bg-card border-border group animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
-                <value.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:shadow-glow transition-smooth">
+                <value.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{value.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{value.description}</p>

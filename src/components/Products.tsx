@@ -79,14 +79,18 @@ const Products = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {products.map((product, index) => (
-            <Card key={index} className="p-6 hover:shadow-medium transition-all duration-300 bg-card border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-4 pb-3 border-b border-border">
+            <Card 
+              key={index} 
+              className="p-6 hover:shadow-strong transition-all duration-500 bg-card border-border hover:-translate-y-2 group animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className="text-xl font-semibold text-foreground mb-4 pb-3 border-b border-border group-hover:text-primary transition-smooth">
                 {product.category}
               </h3>
               <ul className="space-y-3">
                 {product.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0" />
+                  <li key={idx} className="flex items-start text-sm text-muted-foreground group-hover:translate-x-1 transition-smooth" style={{ transitionDelay: `${idx * 50}ms` }}>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0 group-hover:shadow-glow" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -97,8 +101,8 @@ const Products = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-gradient-solar rounded-full flex items-center justify-center mx-auto mb-4 shadow-medium">
+            <div key={index} className="text-center animate-fade-in-up group" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="w-16 h-16 bg-gradient-solar rounded-full flex items-center justify-center mx-auto mb-4 shadow-medium group-hover:shadow-glow group-hover:scale-110 transition-all duration-300">
                 <benefit.icon className="w-8 h-8 text-foreground" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h4>
