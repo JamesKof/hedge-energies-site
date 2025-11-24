@@ -36,8 +36,11 @@ const Header = () => {
             <button onClick={() => scrollToSection("solutions")} className="text-foreground hover:text-primary transition-smooth font-medium">
               Solutions
             </button>
-            <button onClick={() => scrollToSection("products")} className="text-foreground hover:text-primary transition-smooth font-medium">
+            <button onClick={() => scrollToSection("products-catalog")} className="text-foreground hover:text-primary transition-smooth font-medium">
               Products
+            </button>
+            <button onClick={() => scrollToSection("services")} className="text-foreground hover:text-primary transition-smooth font-medium">
+              Services
             </button>
             <button onClick={() => scrollToSection("contact")} className="text-foreground hover:text-primary transition-smooth font-medium">
               Contact
@@ -71,8 +74,11 @@ const Header = () => {
             <button onClick={() => scrollToSection("solutions")} className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2 font-medium">
               Solutions
             </button>
-            <button onClick={() => scrollToSection("products")} className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2 font-medium">
+            <button onClick={() => scrollToSection("products-catalog")} className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2 font-medium">
               Products
+            </button>
+            <button onClick={() => scrollToSection("services")} className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2 font-medium">
+              Services
             </button>
             <button onClick={() => scrollToSection("contact")} className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2 font-medium">
               Contact
